@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 class CustomerController extends Controller {
 
     public function index(Request $request) {
-        $perPage = $request->perPage ?? 15;
+        $perPage = $request->perPage ?? 5;
         $keyword = $request->keyword;
 
         $query = Customer::query();
