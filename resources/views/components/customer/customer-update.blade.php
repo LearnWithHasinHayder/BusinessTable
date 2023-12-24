@@ -18,7 +18,7 @@
                                 <label class="form-label">Customer Mobile *</label>
                                 <input type="text" class="form-control mb-2" id="customerMobileUpdate">
 
-                                <input type="text" class="d-none" id="customerID">
+                                <input type="hidden" class="d-none" id="customerID">
                             </div>
                         </div>
                     </div>
@@ -41,6 +41,7 @@
         try {
             const response = await axios.get(`/customers/${id}`);
             const customerData = response.data;
+            console.log(customerData);
             document.getElementById('customerNameUpdate').value = customerData.name;
             document.getElementById('customerEmailUpdate').value = customerData.email;
             document.getElementById('customerMobileUpdate').value = customerData.mobile;
