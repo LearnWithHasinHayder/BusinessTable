@@ -30,9 +30,9 @@
 
 <script>
     async function saveCustomer() {
-        let customerName = document.getElementById('customer-name').value;
-        let customerEmail = document.getElementById('customer-email').value;
-        let customerMobile = document.getElementById('customer-mobile').value;
+        const customerName = document.getElementById('customer-name').value;
+        const customerEmail = document.getElementById('customer-email').value;
+        const customerMobile = document.getElementById('customer-mobile').value;
 
         // Simple front-end validation
         if (!customerName || !customerEmail || !customerMobile) {
@@ -44,7 +44,7 @@
             showLoader();
             closeModal('create-modal');
 
-            let response = await axios.post("/customers", {
+            const response = await axios.post("/customers", {
                 name: customerName,
                 email: customerEmail,
                 mobile: customerMobile

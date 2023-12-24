@@ -6,12 +6,12 @@ function hideLoader() {
 }
 
 
-function modalOpen(modalId) {
+function openModal(modalId) {
     let myModal = new bootstrap.Modal(document.getElementById(modalId));
     myModal.show();
 }
 
-function modalClose(modalId) {
+function closeModal(modalId) {
     let modalElement = document.getElementById(modalId);
     let myModal = bootstrap.Modal.getInstance(modalElement);
     if (myModal) {

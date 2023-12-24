@@ -72,8 +72,8 @@
 
     // Function to fetch and display the list of customers
     async function getList() {
-        let perPage = document.getElementById("perPage").value
-        let keyword = document.getElementById("keyword").value
+        const perPage = document.getElementById("perPage").value
+        const keyword = document.getElementById("keyword").value
 
         try {
             showLoader()
@@ -89,7 +89,7 @@
 
     // Function to update the table with customer data
     function updateTable(data) {
-        let tableList = document.getElementById("tableList");
+        const tableList = document.getElementById("tableList");
 
         // Check if there are no customers to display
         if (!data.data.length) {
@@ -98,7 +98,7 @@
         }
 
         // Build the rows HTML string
-        let rowsHtml = data.data.map(customer => {
+        const rowsHtml = data.data.map(customer => {
             return `<tr>
                     <td>${customer.name}</td>
                     <td>${customer.email}</td>
@@ -157,15 +157,15 @@
 
     // Attach event listeners to dynamically created buttons
     document.getElementById('tableList').addEventListener('click', function(event) {
-        let target = event.target
+        const target = event.target
 
         if (target.classList.contains('deleteBtn')) {
-            let customerId = target.getAttribute('data-id')
+            const customerId = target.getAttribute('data-id')
             deletecustomer(customerId)
         }
 
         if (target.classList.contains('editBtn')) {
-            let customerId = target.getAttribute('data-id')
+            const customerId = target.getAttribute('data-id')
             fillUpUpdateForm(customerId)
         }
     })

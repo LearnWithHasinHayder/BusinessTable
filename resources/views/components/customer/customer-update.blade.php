@@ -39,12 +39,12 @@
         document.getElementById('customerID').value = id;
         showLoader();
         try {
-            let response = await axios.get(`/customers/${id}`);
-            let customerData = response.data;
+            const response = await axios.get(`/customers/${id}`);
+            const customerData = response.data;
             document.getElementById('customerNameUpdate').value = customerData.name;
             document.getElementById('customerEmailUpdate').value = customerData.email;
             document.getElementById('customerMobileUpdate').value = customerData.mobile;
-            modalOpen('update-modal');
+            openModal('update-modal');
         } catch (error) {
             console.error('Error fetching customer data:', error);
             // Handle error appropriately
@@ -55,10 +55,10 @@
 
 
     async function updateCustomer() {
-        let customerName = document.getElementById('customerNameUpdate').value;
-        let customerEmail = document.getElementById('customerEmailUpdate').value;
-        let customerMobile = document.getElementById('customerMobileUpdate').value;
-        let customerID = document.getElementById('customerID').value;
+        const customerName = document.getElementById('customerNameUpdate').value;
+        const customerEmail = document.getElementById('customerEmailUpdate').value;
+        const customerMobile = document.getElementById('customerMobileUpdate').value;
+        const customerID = document.getElementById('customerID').value;
 
         if (!customerName || !customerEmail || !customerMobile) {
             alert("All fields are required!");
@@ -66,9 +66,9 @@
         }
 
         try {
-            modalClose('update-modal');
+            closeModal('update-modal');
             showLoader();
-            let response = await axios.put(`/customers/${customerID}`, {
+            const response = await axios.put(`/customers/${customerID}`, {
                 name: customerName,
                 email: customerEmail,
                 mobile: customerMobile

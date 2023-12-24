@@ -15,7 +15,7 @@ class CustomerController extends Controller {
         $query = Customer::query();
 
         if ($keyword) {
-            $query->where('name', 'like', '%' . $keyword . '%');
+            $query = Customer::where('name', 'like', '%' . $keyword . '%');
             // $query->orWhere('email', 'like', '%' . $keyword . '%');
         }
 
