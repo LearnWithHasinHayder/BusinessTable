@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&amp;display=swap');
+@import "bootstrap.css";
+@import "progress.css";
+
+body {
+    background:#F9F8F8;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif !important;
+}
+h1,h2,h3,h4,h5,h6,button,input,textarea{
+    font-family: 'Poppins', sans-serif !important;
+}
+.form-label{
+    margin: 0;
+    padding: 0;
+}
