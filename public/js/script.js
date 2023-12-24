@@ -6,7 +6,6 @@ function hideLoader() {
 }
 
 
-
 function modalOpen(modalId) {
     let myModal = new bootstrap.Modal(document.getElementById(modalId));
     myModal.show();
